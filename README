@@ -1,0 +1,43 @@
+This is a simple REST-API application. 
+
+MVC like Architecture is implemented in the following approach: 
+Controller -> Service -> Repository pattern is used.
+This pattern separates the concerns. Testing, or adding new modules/functionalities is easier.
+
+src 
+    --- router // router folder is used to forward incoming traffic
+    
+    --- service //service folder is used for main logic
+
+    --- test //test folder is used for integration&unit test
+
+    --- utils //utils folder is used for common functions(utilities)
+
+    -- .env //this file is used to store environment variables. Updating variables is faster and more efficient using env. Searching the code to update the variables can be time consuming.
+
+To make sure code is consistently formatted Linter is used.  https://www.npmjs.com/package/linter 
+
+INSTALLATION 
+Install dependencies with npm install command. 
+Then to run the main in the debugging mode in nodejs. 
+
+Debug Console should output the following
+/usr/local/bin/node ./main.js
+Listening on port 8080.
+
+TESTING  
+for unit testing, Chai framework is used. https://www.npmjs.com/package/chai
+
+Integration tests for the "/" endpoint is tested in the test/hmac_test.js 
+run the integration test with run npm test command as shown in integration_testing.png
+
+To test the data on postman send a POST request to http://localhost:8080 
+Body should be in the following format 
+{
+    "data": "id=MDAwMDAwMDAtMDAwMC0wMDBiLTAxMmMtMDllZGU5NDE2MDAz"
+} 
+
+media
+![](valid_request_body.png)
+![](invalid_request_body.png)
+![](integration_testing.png)
